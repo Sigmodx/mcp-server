@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sigmodx-mcp"
+version = "0.1.0"
+description = "MCP server for Sigmodx — AI agent audit infrastructure"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "sigmodx>=0.3.0",
+    "mcp>=1.0.0",
+    "httpx>=0.24.0",
+]
+
+[project.scripts]
+sigmodx-mcp = "sigmodx_mcp.server:run"
+
+[project.urls]
+Homepage = "https://sigmodx.com"
+Repository = "https://github.com/Sigmodx/mcp-server"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sigmodx_mcp"]
